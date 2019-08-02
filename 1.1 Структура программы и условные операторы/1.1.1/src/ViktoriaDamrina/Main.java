@@ -18,10 +18,11 @@ public class Main {
             Scanner scanYear = new Scanner(System.in);
             System.out.println("Введите год в формате \"yyyy\"");
             if (scanYear.hasNextInt()){ // проверяем введенные данные на тип, если строка, запускаем цикл заново, если нет
-                    inputYear = scanYear.nextInt();// присваеваем значение введёных даных переменной inputYear
+                inputYear = scanYear.nextInt();// присваеваем значение введёных даных переменной inputYear
                 if (inputYear < todayYear){ // Проверяем введный год на условие меньше ли он текущего,
-                System.out.println("Год должен быть не меньше текущего"); // если да, запускаем цикл заново
-            } else { // если год больше текущего, то начинаем проверку на Високосный год
+                    System.out.println("Год должен быть не меньше текущего"); // если да, запускаем цикл заново
+                } else
+                { // если год больше текущего, то начинаем проверку на Високосный год
                     if (inputYear % 400 == 0){
                         System.out.println("Количество дней 366 ");
                     } else if (inputYear % 100 == 0){
@@ -33,7 +34,5 @@ public class Main {
                 }
             }
         } while(inputYear < todayYear); // условие выхода из цикла
-
-
     }
 }
